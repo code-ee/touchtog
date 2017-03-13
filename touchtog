@@ -1,0 +1,10 @@
+#!/bin/bash
+
+read tpId <<< $( xinput | sed -nre '/Touchpad/s/.*id=([0-9]*).*/\1/p' )
+state=$( xinput list-props $tpId | grep "Device Enabled" | grep -o "[01]$" )
+
+if [ "$state" -eq '1' ];then
+    xinput --disable $tpId
+else
+    xinput --enable $tpId
+fi
