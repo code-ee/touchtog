@@ -1,6 +1,6 @@
 #!/bin/bash
 # create the $HOME/opt/bin directory if it doesn't exist
-new_path_dir="$HOME/opt/bin"
+new_path_dir="$HOME/bin"
 mkdir -p $new_path_dir
 
 # add it to the path if it's not already there
