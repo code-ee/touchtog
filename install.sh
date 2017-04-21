@@ -59,13 +59,14 @@ gsettings set "$set_arg" command "'$new_path_dir/touchtog'"
 gsettings set "$set_arg" binding '<Control><Shift>J'
 
 # output messages
-echo "---"
+echo "---touchtog---"
 echo "Done. You can now start using touchtog"
 echo "To toggle your touchpad on/off, press Ctrl+Shift+J"
 echo "You can change the hotkey in your system settings via your O.S. GUI."
 echo "System Settings > Keyboard > Shortcuts > Custom Shortcuts"
 echo "Alternatively, you can type the command 'touchtog' after terminal restart"
-echo "---"
+echo "--------------"
+echo ""
 
 # unset all the variables used in this script
 unset binding_list; unset comma; unset list_length; unset new_item;
