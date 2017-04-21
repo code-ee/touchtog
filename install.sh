@@ -3,6 +3,9 @@
 new_path_dir="$HOME/bin"
 mkdir -p $new_path_dir
 
+# copy the bash script to that directory
+cp touchtog "$new_path_dir"
+
 # add it to the path if it's not already there
 in_path=0
 echo "$PATH" | grep -q "$new_path_dir" && in_path=1
@@ -11,9 +14,6 @@ if [ $in_path == 0 ]; then
     echo "export PATH=\"\$PATH:$new_path_dir\"" >> ~/.bashrc
     source $HOME/.bashrc
 fi
-
-# copy the bash script to that directory
-cp touchtog "$new_path_dir"
 
 # get the current list of key bindings
 binding_list=$(gsettings get org.gnome.settings-daemon.plugins.media-keys custom-keybindings)
@@ -59,11 +59,13 @@ gsettings set "$set_arg" command "'$new_path_dir/touchtog'"
 gsettings set "$set_arg" binding '<Control><Shift>J'
 
 # output messages
+echo "---"
 echo "Done. You can now start using touchtog"
 echo "To toggle your touchpad on/off, press Ctrl+Shift+J"
 echo "You can change the hotkey in your system settings via your O.S. GUI."
 echo "System Settings > Keyboard > Shortcuts > Custom Shortcuts"
 echo "Alternatively, you can type the command 'touchtog' after terminal restart"
+echo "---"
 
 # unset all the variables used in this script
 unset binding_list; unset comma; unset list_length; unset new_item;
