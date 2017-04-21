@@ -19,17 +19,24 @@ To install this script, simply run the install.sh via command line:
 
     `cd /path/to/touchtog`
 
-1. Run the install script:
+2. Run the install script:
 
     `./install.sh`
 
+3. Restart your terminal (this updates your PATH environment variable)
+
 ### Using touchtog
-After installing, you can use either of the following methods to toggle your touchpad.
+After installing, you can use either of the following methods to
+toggle your touchpad.
 
-1. Using the keyboard shortcut *(Gnome based distributions only)*
+1. Using the keyboard shortcut
 
-    `Ctrl + Shift + J`
+    *For Gnome based distributions:* `Ctrl + Shift + J` will work
+    automatically after running the install.sh
 
-1. Via the command line
+    *For other distributions:* You'll have to set the keyboard
+    shortcut manually via your system settings.
+
+2. Via the command line
 
     `touchtog`
